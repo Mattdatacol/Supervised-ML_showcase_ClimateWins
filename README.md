@@ -51,7 +51,7 @@ Here is an example of the Decison tree from Madrid:
 
 ![decision_tree_Madrid](Visualizations/Decision_trees/tree_MADRID.png)
 
-ince the metrics were consistent across all weather stations, we can summarize the model as follows:
+Since the metrics were consistent across all weather stations, we can summarize the model as follows:
 ```mermaid
 flowchart LR
 A{Temperature <= 17,95°C ?}
