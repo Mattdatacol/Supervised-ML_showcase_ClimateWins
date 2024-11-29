@@ -62,7 +62,7 @@ C -->|NO| E{sunshine <= 0,95 ?}
 E -->|YES| F[Unpleasant]
 E -->|NO| G[Pleasant !]
 ```
-Maybe rnarrowing down the metrics to only these three might help the KNN performing better in future instances...
+Maybe narrowing down the metrics to only these three might help the KNN performing better in future instances...
 
 [**e. Artificial Neural Network (ANN):**](Scripts/5_ANN.ipynb) With a global accuracy score of 99.77%, the ANN performed very well when its parameters involved no more than 500 iterations, a tolerance not lower than 0.000, and only two hidden layers of 5 nodes each. When I tried higher parameter values, the accuracy dropped, indicating that the model might become too complicated over time.
 The confusion matrix on the testing data shows that the model best performs on the stations were there are balanced pleasant and unpleasant days, like Belgrade and Madrid:
