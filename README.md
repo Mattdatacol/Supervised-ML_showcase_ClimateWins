@@ -35,22 +35,23 @@ The main tool used for this study is Python using the [Jupyter notebook](https:/
 
 Insights from the three stations:
 - Tours (France): Temperatures in 1960 were very low, in 1990 they had the highest range with very high temperatures, and 2009 seems more evened.
-- Budapest (Hungary): There is an overall increase of temperatures with a mean from -0,06 to 0,09, while the min temperature is the lowest in 2009: the increase of temperatures might cause also very cold winters.
-- Rome (Italy): Temperatures are changing with a slanted positive rise, even though 1990 has been a little colder. The max temperature in 2009 represent an increase of about a third of 1960’ max.
+- Budapest (Hungary): Overall temperatures have increased, with a mean range from -0.06 to 0.09. The minimum temperature was lowest in 2009, indicating that rising temperatures might also lead to very cold winters
+- Rome (Italy): Temperatures are rising steadily, despite a slight dip in 1990. The maximum temperature in 2009 increased by about a third compared to 1960.
 
-[**c. K-Nearest Neighbor (KNN):**](Scripts/3_KNN.ipynb) At first, I applied the KNN model on the whole data set in order ot predict all tags for pleasant or unpleasant days, resulting in a 90% accuracy score, an 85% precision score and an 84% recall score. It looks okay, but not perfect, so is there any under or overfitting happening? It resulted that a model that learns from all weather stations at the same time for the same day can become too complex and **lose accuracy** due to noise and outliers in the data.
+[**c. K-Nearest Neighbor (KNN):**](Scripts/3_KNN.ipynb) Initially, I applied the KNN model to the entire dataset to predict tags for pleasant or unpleasant days, achieving a 90% accuracy score, 85% precision score, and 84% recall score. While the results are decent, they are not perfect, indicating potential underfitting or overfitting. It resulted that the model, when learning from all weather stations simultaneously for the same day, can become too complex and lose accuracy due to noise and outliers.
 
-In other words, in my model at first, Weather conditions in Madrid had an impact on the labeled weather in Stockholm : absurd !
+In other words, in my initial model, weather conditions in Madrid impacted the labeled weather in Stockholm, which is clearly absurd!
 
 The final confusion matrix on the testing data is as follow and illustrates the overall 94,3% accuracy of the KNN model:
 ![confusion matrix of the testing data](Visualizations/cm_KNN_testing.png)
 The confusion matrix nuances the accuracy, showing that the tags for well performing weather stations like Valentia are not very well balanced (ratio of tags), having more false negatives.
 
-[**d. Decision Tree:**](Scripts/4_Decision_Tree.ipynb) This algorithm surprizingly had a 100% accuracy score once the model was checking the label for its weaether station metrics, and reach a conclusion in only three steps. Here is an example of the Decison tree from Madrid:
+[**d. Decision Tree:**](Scripts/4_Decision_Tree.ipynb) Surprisingly, this algorithm achieved a 100% accuracy score when the model checked the label for its weather station metrics, reaching a conclusion in only three steps.
+Here is an example of the Decison tree from Madrid:
 
 ![decision_tree_Madrid](Visualizations/Decision_trees/tree_MADRID.png)
 
-Since the metrics were consistent for all the wether stations, we can then summarize the model like this:
+ince the metrics were consistent across all weather stations, we can summarize the model as follows:
 ```mermaid
 flowchart LR
 A{Temperature <= 17,95°C ?}
@@ -63,7 +64,7 @@ E -->|NO| G[Pleasant !]
 ```
 Maybe rnarrowing down the metrics to only these three might help the KNN performing better in future instances...
 
-[**e. Artificial Neural Network (ANN):**](Scripts/5_ANN.ipynb) With a global accuracy score of 99,77, the ANN performed very well when its parameters didn't involve too many iterations (max 500) with a tolerance not lower than 0,000 and with only two hidden layers of 5 nodes each. As I tried higher values in the parameters, its accuracy dropped meaning the model might get too complicated over time.
+[**e. Artificial Neural Network (ANN):**](Scripts/5_ANN.ipynb) With a global accuracy score of 99.77%, the ANN performed very well when its parameters involved no more than 500 iterations, a tolerance not lower than 0.000, and only two hidden layers of 5 nodes each. When I tried higher parameter values, the accuracy dropped, indicating that the model might become too complicated over time.
 The confusion matrix on the testing data shows that the model best performs on the stations were there are balanced pleasant and unpleasant days, like Belgrade and Madrid:
 
 ![cm ANN](Visualizations/cm_ANN_testing.png)
