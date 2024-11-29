@@ -46,7 +46,8 @@ The final confusion matrix on the testing data is as follow and illustrates the 
 ![confusion matrix of the testing data](Visualizations/cm_KNN_testing.png)
 The confusion matrix nuances the accuracy, showing that the tags for well performing weather stations like Valentia are not very well balanced (ratio of tags), having more false negatives.
 
-[**d. Decision Tree:**](Scripts/4_Decision_Tree.ipynb) This algorithm surprizingly had a 100% accuracy score once the model was checking the label for its weaether station metrics, and reach a conclusion in only three steps. Here is an example of the Decison tree from the Madrid:
+[**d. Decision Tree:**](Scripts/4_Decision_Tree.ipynb) This algorithm surprizingly had a 100% accuracy score once the model was checking the label for its weaether station metrics, and reach a conclusion in only three steps. Here is an example of the Decison tree from Madrid:
+
 ![decision_tree_Madrid](Visualizations/Decision_trees/tree_MADRID.png)
 
 Since the metrics were consistent for all the wether stations, we can then summarize the model like this:
