@@ -2,7 +2,7 @@
 ***A comparison study of supervised classification algorithms (KNN, ANN and Decision tree)***
 
 ## 1. Context
-As the data analyst within the non profit organisation called ClimateWins, my first task is to investigate if machine learning models can predict whether the weather will be pleasant on a given day, based on several recorded weather conditions (wind speed, temperature, humidity, precipitations, etc.). 
+As a data analyst within the non profit organisation called ClimateWins, my first task is to investigate if machine learning models can predict whether the weather will be pleasant on a given day, based on several recorded weather conditions (wind speed, temperature, humidity, precipitations, etc.). 
 
 Hence, there main concerns are:
 - How is machine learning used? Is it applicable to weather data?
